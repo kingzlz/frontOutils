@@ -1,8 +1,8 @@
 {
   "name": "frontoutils",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "常用前端业务代码工具库",
-  "main": "min/frontoutils.min.js",
+  "main": "index.js",
   "scripts": {
     "build": "node script/build.js",
     "test": "karma start script/karma.conf.js"
