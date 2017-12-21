@@ -13,13 +13,13 @@ const arrayTool = require('./src/array/index');
 const cookieTool = require('./src/cookie/index');
 
 module.exports = {
-    frontoutils,
-    arrayTool,
-    mathTool,
-    utils,
-    stringTool,
-    cookieTool,
-    regexpTool,
-    dateTool,
-    getKeyName
+    frontoutils: frontoutils,
+    arrayTool: arrayTool,
+    mathTool: mathTool,
+    utils: utils,
+    stringTool: stringTool,
+    cookieTool: cookieTool,
+    regexpTool: regexpTool,
+    dateTool: dateTool,
+    getKeyName: getKeyName
 };

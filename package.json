@@ -1,6 +1,6 @@
 {
   "name": "frontoutils",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "常用前端业务代码工具库",
   "main": "min/frontoutils.min.js",
   "scripts": {
