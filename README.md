@@ -1,10 +1,6 @@
 # frontoutils
-[![npm](https://img.shields.io/npm/v/frontOutils.svg)](https://www.npmjs.com/package/frontoutils)
-[![Coverage](https://coveralls.io/repos/github/kingzlz/frontOutils/badge.svg?branch=master) 
-![LICENSE MIT](https://img.shields.io/npm/l/frontOutils.svg)](https://www.npmjs.com/package/frontoutils)
-
  
-前端业务代码工具库  
+前端开发业务常用代码工具库  
 
 > 目的：高效率完成前端业务代码
 

@@ -1,6 +1,6 @@
 {
   "name": "frontoutils",
-  "version": "1.1.0",
+  "version": "1.1.4",
   "description": "常用前端业务代码工具库",
   "main": "index.js",
   "scripts": {
