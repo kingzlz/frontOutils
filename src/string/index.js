@@ -121,6 +121,18 @@ class StringTool {
         return str.split('').sort((a, b) => a.localeCompare(b)).join('');
     }
 
+    //格式化字符, size-每隔几个字符进行分割 默认3, delimiter-分割符 默认','
+    formatText(str, size, delimiter) {
+        let _str = str.toString();
+        let _size = size || 3, _delimiter = delimiter || ',';
+        let regText = '\\d{1,' + _size + '}(?=(\\d{' + _size + '})+$)';
+        let reg = new RegExp(regText, 'g');
+
+        return _str.replace(/^(-?)(\d+)((\.\d+)?)$/, function ($0, $1, $2, $3) {
+            return $1 + $2.replace(reg, '$&,') + $3;
+        })
+    }
+
 }
 
 let stringTool = new StringTool();
