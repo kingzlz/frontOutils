@@ -126,7 +126,7 @@ class Utils {
         if (diff === 0) return;
         let step = diff / duration * 10;
         requestAnimFrame(
-            function () {
+            function() {
                 if (Math.abs(step) > Math.abs(diff)) {
                     this.setScrollTop(this.getScrollTop() + diff);
                     return;
@@ -188,13 +188,13 @@ class Utils {
         let sys = {},
             ua = navigator.userAgent.toLowerCase(),
             s;
-        (s = ua.match(/rv:([\d.]+)\) like gecko/)) ? sys.ie = s[1] :
+        (s = ua.match(/rv:([\d.]+)\) like gecko/)) ? sys.ie = s[1]:
             (s = ua.match(/msie ([\d\.]+)/)) ? sys.ie = s[1] :
-                (s = ua.match(/edge\/([\d\.]+)/)) ? sys.edge = s[1] :
-                    (s = ua.match(/firefox\/([\d\.]+)/)) ? sys.firefox = s[1] :
-                        (s = ua.match(/(?:opera|opr).([\d\.]+)/)) ? sys.opera = s[1] :
-                            (s = ua.match(/chrome\/([\d\.]+)/)) ? sys.chrome = s[1] :
-                                (s = ua.match(/version\/([\d\.]+).*safari/)) ? sys.safari = s[1] : 0;
+            (s = ua.match(/edge\/([\d\.]+)/)) ? sys.edge = s[1] :
+            (s = ua.match(/firefox\/([\d\.]+)/)) ? sys.firefox = s[1] :
+            (s = ua.match(/(?:opera|opr).([\d\.]+)/)) ? sys.opera = s[1] :
+            (s = ua.match(/chrome\/([\d\.]+)/)) ? sys.chrome = s[1] :
+            (s = ua.match(/version\/([\d\.]+).*safari/)) ? sys.safari = s[1] : 0;
         // 根据关系进行判断
         if (sys.ie) return ('IE: ' + sys.ie);
         if (sys.edge) return ('EDGE: ' + sys.edge);
@@ -215,10 +215,8 @@ class Utils {
 
     windowResize(downCb, upCb) {
         let clientHeight = window.innerHeight;
-        downCb = typeof downCb === 'function' ? downCb : function () {
-        };
-        upCb = typeof upCb === 'function' ? upCb : function () {
-        };
+        downCb = typeof downCb === 'function' ? downCb : function() {};
+        upCb = typeof upCb === 'function' ? upCb : function() {};
         window.addEventListener('resize', () => {
             let height = window.innerHeight;
             if (height === clientHeight) {
@@ -349,14 +347,95 @@ class Utils {
         return !![].map && document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') == 0;
     }
 
+    /**
+     * @hidden
+     * @param {?} val
+     * @return {?}
+     */
+    isBoolean(val) {
+        return typeof val === 'boolean';
+    }
+    /**
+     * @hidden
+     * @param {?} val
+     * @return {?}
+     */
+    isString(val) {
+        return typeof val === 'string';
+    }
+    /**
+     * @hidden
+     * @param {?} val
+     * @return {?}
+     */
+    isNumber(val) {
+        return typeof val === 'number';
+    }
+    /**
+     * @hidden
+     * @param {?} val
+     * @return {?}
+     */
+    isFunction(val) {
+        return typeof val === 'function';
+    }
+    /**
+     * @hidden
+     * @param {?} val
+     * @return {?}
+     */
+    isDefined(val) {
+        return typeof val !== 'undefined';
+    }
+    /**
+     * @hidden
+     * @param {?} val
+     * @return {?}
+     */
+    isUndefined(val) {
+        return typeof val === 'undefined';
+    }
+    /**
+     * @hidden
+     * @param {?} val
+     * @return {?}
+     */
+    isPresent(val) {
+        return val !== undefined && val !== null;
+    }
+    /**
+     * @hidden
+     * @param {?} val
+     * @return {?}
+     */
+    isBlank(val) {
+        return val === undefined || val === null;
+    }
+    /**
+     * @hidden
+     * @param {?} val
+     * @return {?}
+     */
+    isObject(val) {
+        return typeof val === 'object';
+    }
+    /**
+     * @hidden
+     * @param {?} val
+     * @return {?}
+     */
+    isArray(val) {
+        return Array.isArray(val);
+    }
+
 
 }
 
-let requestAnimFrame = (function () {
+let requestAnimFrame = (function() {
     return window.requestAnimationFrame ||
         window.webkitRequestAnimationFrame ||
         window.mozRequestAnimationFrame ||
-        function (callback) {
+        function(callback) {
             window.setTimeout(callback, 1000 / 60);
         };
 })();

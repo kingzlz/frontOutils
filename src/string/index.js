@@ -93,6 +93,11 @@ class StringTool {
         return str.slice(0, 1).toUpperCase() + (lowerRest ? str.slice(1).toLowerCase() : str.slice(1));
     }
 
+    // 一串字符串,首字母大写
+    toCapitalize(str) {
+        return str.replace(/\b\w/g, word => word.toUpperCase());
+    }
+
     // 检查回文
     // palindrome('taco cat') -> true
     palindrome(str) {
