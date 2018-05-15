@@ -143,6 +143,10 @@ class ArrayTool {
         return [...new Set(arr)];
     }
 
+    unique2(arr) {
+        return Array.from(new Set(arr));
+    }
+
 
 }
 
