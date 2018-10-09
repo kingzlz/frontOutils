@@ -72,5 +72,5 @@ console.log(utils.uuid());
 
 
 ### Url
-详情请到src里面看
+详情请到src里面看各种方法
 
